@@ -1,0 +1,15 @@
+{
+    "profile": {
+        "name": "Allison Grasso",
+        "position": "Software Engineer",
+        "email": "alligrasson@gmail.com",
+        "website": "alligrass.dev",
+        "summary": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, nisi optio similique doloremque consequuntur sit pariatur voluptas? Alias accusantium, officiis non maiores architecto, illo eum magnam ab animi, illum libero?"
+    },
+    "skill": {
+        "languages": ["HTML", "CSS", "JavaScript", "TypeScript"],
+        "technologies": ["React", "Node.js", "PostgreSql", "Github", "Heroku"]
+    },
+    "experience": {},
+    "project": {}
+}

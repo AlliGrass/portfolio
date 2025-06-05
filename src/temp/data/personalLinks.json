@@ -1,0 +1,17 @@
+{
+    "linkedin": {
+        "social": "LinkedIn",
+        "img_src": "",
+        "link": ""
+    },
+    "github": {
+        "social": "GitHub",
+        "img_src": "",
+        "link": ""
+    },
+    "gmail": {
+        "social": "Gmail",
+        "img_src": "",
+        "link": ""
+    }
+}

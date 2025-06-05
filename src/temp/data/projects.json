@@ -1,0 +1,26 @@
+{
+    "solitare": {
+        "title": "Solitaire",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis optio eius doloribus, quidem repellat, illo facilis architecto",
+        "tag": ["html", "css", "js"],
+        "github": "",
+        "preview": "",
+        "status": "Complete"
+    },
+    "diceRPG": {
+        "title": "Dice RPG",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis optio eius doloribus, quidem repellat, illo facilis architecto",
+        "tag": ["ts", "rct"],
+        "github": "",
+        "preview": "",
+        "status": "In Development"
+    },
+    "portfolio": {
+        "title": "Portfolio",
+        "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis optio eius doloribus, quidem repellat, illo facilis architecto",
+        "tag": ["ts", "rct", "next"],
+        "github": "",
+        "preview": "",
+        "status": "In Development"
+    }
+}

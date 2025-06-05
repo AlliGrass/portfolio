@@ -1,0 +1,48 @@
+{
+    "languages": [
+        "html",
+        "css",
+        "js",
+        "ts",
+        "java"
+    ],
+    "technologies": [
+        "node",
+        "rct",
+        "next",
+        "psql"
+    ],
+
+    "fullList": {
+        "html": {
+            "title": "HTML"
+        },
+        "css": {
+            "title": "CSS"
+        },
+        "js": {
+            "title": "JavaScript"
+        },
+        "ts": {
+            "title": "TypeScript"
+        },
+        "java": {
+            "title": "Java"
+        },
+        "node": {
+            "title": "Node.js"
+        },
+        "rct": {
+            "title": "React"
+        },
+        "next": {
+            "title": "Next.js"
+        },
+        "psql": {
+            "title": "PostgreSql"
+        },
+        "github": {
+            "title": "GitHub"
+        }
+    }
+}
