@@ -1,8 +1,9 @@
 import { useTheme } from "@/context/ThemeContext"
+import ThemeSwitcher from "../ui/tempThemeSwitch"
 
 
 export default function Hero({toggleSidePage}: any) {
-    const {theme, toggleTheme} = useTheme()
+    // const {theme, toggleTheme} = useTheme()
 
     return(
         <div className="justify-items-center">
@@ -11,7 +12,8 @@ export default function Hero({toggleSidePage}: any) {
             <p>Based in Melbourne, Australia. With a love for problem solving I strive to push myself through challenges</p>
             <button>Projects \/</button> {""}
             <button onClick={toggleSidePage}>Experience {"-->"}</button>
-            <button onClick={toggleTheme}>Change {theme}</button>
+            <ThemeSwitcher/>
+            {/* <button onClick={toggleTheme}>Change {theme}</button> */}
         </div>
     )
 }

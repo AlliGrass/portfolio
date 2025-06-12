@@ -10,16 +10,17 @@ type ThemeContextType = {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
 export function ThemeProvider({ children }: any) {
-    const [theme, setTheme] = useState<Theme>(() => {
-        if (typeof window !== 'undefined') {
-            const savedTheme = localStorage.getItem('theme') as Theme | null
-            if (savedTheme) return savedTheme
+    const [theme, setTheme] = useState<Theme>("light")
+    //     () => {
+    //     if (typeof window !== 'undefined') {
+    //         const savedTheme = localStorage.getItem('theme') as Theme | null
+    //         if (savedTheme) return savedTheme
 
-            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-            return systemPrefersDark ? "dark" : "light"
-        }
-        return "light" 
-    })
+    //         const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+    //         return systemPrefersDark ? "dark" : "light"
+    //     }
+    //     return "light" 
+    // })
 
     useEffect(() => {
         localStorage.setItem('theme', theme)

@@ -4,6 +4,7 @@ import plugin from 'tailwindcss/plugin';
 export default {
     content: [
         './src/**/*.{js,jsx,ts,tsx}',
+        './src/app/**/*.{js,jsx,ts,tsx}',
         './node_modules/my-library/**/*.js',
     ],
 
@@ -40,12 +41,4 @@ export default {
         }),
     ],
 
-    // Force include certain classes (e.g., for CMS-generated content)
-    safelist: [
-        'bg-red-500',
-        'text-xl',
-        {
-            pattern: '/bg-(red|blue|green)-(100|500|800)/',
-        },
-    ],
 };
