@@ -3,7 +3,7 @@
 export default function CodingJourneyCard({timePeriodDetails}: any) {
      
     return (
-        <div className="bg-red-500 p-5 group relative flex h-20 items-center justify-center">
+        <div className="bg-red-500 dark:bg-blue-500 p-5 group relative flex h-20 items-center justify-center">
             <div className="z-10 transform transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] 
              group-hover:-translate-x-20">
                 <h3>{timePeriodDetails.title}</h3>

@@ -34,6 +34,16 @@ After the completion of the frontend I will include a backend and admin page so 
 - Project Showcase: A section to display my projects with descriptions and technologies used.
 - Dark/Light Mode: Toggleable theme for better user experience.
 
+### Known Issues & Solutions
+- **UI**
+    - Affected Files: All
+    - Status: Functional
+    - Plan: Basic UI implementation
+
+- **Context Type issue**
+    - Affected Files: Files with toggle theme
+    - Status: Functional
+    - Plan: Discover Proper Theme Type
 
 ### Long Term Goals
 - Develop a backend for efficient updating of information.
