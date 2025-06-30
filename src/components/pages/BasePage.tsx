@@ -1,17 +1,26 @@
-import AboutMe from "@/components/sections/AboutMe";
-import Capabilities from "@/components/sections/Capabilities";
-import Hero from "@/components/sections/Hero";
-export default function BasePage({toggleSidePage}: any) {
+import AboutMe from "@/components/sections/base/AboutMe";
+import Capabilities from "@/components/sections/base/Capabilities";
+import { useNavigationRefs } from "@/context/NavigationRefsContext";
+import { useState } from "react";
+
+export default function BasePage() {
+    const {projectRef} = useNavigationRefs()
+    const [featuredProject, setFeaturedProject] = useState({
+        "title": "Portfolio",
+        "description": "Veritatis optio eius doloribus, quidem repellat, illo facilis architecto",
+        "tag": ["ts", "rct", "next", "tw"],
+        "github": "https://github.com/AlliGrass/portfolio",
+        "preview": "",
+        "status": "Complete"
+    })
 
     return (
-        <div>
-                  
-            <Hero toggleSidePage={toggleSidePage}/>
-
+        <div className="2xl:px-25">
+            
         
-            <AboutMe/>
+            <AboutMe featuredProject={featuredProject}/>
     
-            <Capabilities/>
+            <Capabilities ref={projectRef} changeFeaturedProject={setFeaturedProject}/>
         </div>
     )
 }

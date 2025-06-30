@@ -17,7 +17,7 @@ const ThemeSwitcher = () => {
 
     return (
         <button
-            className="p-2 rounded-md bg-gray-200 dark:bg-gray-800"
+            className="p-2 rounded-md bg-gray-200 dark:bg-blue-500"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
         >
             {theme === "dark" ? "Light" : "Dark"} Mode

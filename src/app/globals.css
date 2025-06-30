@@ -1,3 +1,48 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+
+  --color-test: #57c785;
+
+  --color-primary-light: #f0f0ff;
+  --color-secondary-light: #D3DCF2;
+  --color-defined-light: #1b1a55;
+  --color-hover-light: #A6B1E162;
+
+  --color-primary-dark: #1a1a1d;
+  --color-secondary-dark: #59244A;
+  --color-defined-dark: #A64D79;
+  --color-hover-dark: #7d4a6b62;
+
+
+  --text-section-heading-2xl: 30px; 
+  --text-section-heading-xl: text-xl;
+  --text-section-heading-lg: text-3xl;
+  --text-section-heading-md: text-3xl;
+  --text-section-heading-sm: text-3xl;
+
+
+
+/* Light theme variables */
+--color-light-test: #1a1a1d;          /* previously primary-text-light */
+--color-light-test0: #1b1a55;         /* previously light-test0 */
+--color-light-test1: #424874;         /* previously defined-light */
+--color-light-test2: #D3DCF2;         /* previously light-test */
+--color-light-test3: #8086B0;         /* previously light-test3 */
+--color-light-test4: #A6B1E162;         /* previously light-test4 */
+--color-light-test5: #f0f0ff;         /* previously primary-background-light/button-light */
+
+/* Dark theme variables */
+--color-dark-test: #1a1a1d;           /* previously primary-background-dark/button-dark */
+--color-dark-test0: #3B1C32;          /* previously button-dark-hover */
+--color-dark-test1: #450C32;          /* previously dark-test2 */
+--color-dark-test2: #59244A;          /* previously dark-test3 */
+--color-dark-test3: #7d4a6b;          /* previously dark-test */
+--color-dark-test4: #A64D79;          /* previously defined-dark */
+--color-dark-test5: #f0f0ff;          /* previously primary-text-dark */
+
+
+}

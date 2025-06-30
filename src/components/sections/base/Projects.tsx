@@ -1,12 +1,11 @@
 import projects from "@/temp/data/projects.json"
-import ProjectCard from "../ui/projects/ProjectCard"
-
-export default function Projects({selectedTags}: any) {
+import ProjectCard from "../../ui/base/projects/ProjectCard"
 
 
+
+const Projects = ({selectedTags, changeFeaturedProject}: any) => {
     return (
         <div>
-            <h2>Featured Projects</h2>
             <div className="flex justify-evenly list-none flex-wrap">
 
                 {
@@ -14,7 +13,7 @@ export default function Projects({selectedTags}: any) {
                         Object.values(projects) : Object.values(projects).filter(project => project.tag.some(tag => selectedTags.includes(tag)))
                     ).map((project) => {
                         return (
-                            <ProjectCard projectDetails={project}/>
+                            <ProjectCard projectDetails={project} changeFeaturedProject={changeFeaturedProject}/>
                         )
                     })
                 }
@@ -24,3 +23,5 @@ export default function Projects({selectedTags}: any) {
         </div>
     )
 }
+
+export default Projects

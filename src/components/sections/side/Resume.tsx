@@ -3,7 +3,7 @@ import resumeDetails from "@/temp/data/resume.json"
 export default function Resume() {
 
     return (
-        <div>
+        <div className="px-100">
             <h1>{resumeDetails.profile.name}</h1>
             <span>{resumeDetails.profile.email + " | " + resumeDetails.profile.website}</span>
             <p>{resumeDetails.profile.summary}</p>

@@ -2,25 +2,35 @@
     "GA": {
         "title": "General Assembly",
         "position": "",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, nisi optio similique doloremque consequuntur sit pariatur voluptas? Alias accusantium, officiis non maiores architecto, illo eum magnam ab animi, illum libero?",
-        "start": "",
-        "finish": "",
-        "experienceNotes": []
+        "start": "Aug 2024",
+        "finish": "Nov 2024",
+        "experienceNotes": [
+            "Built web forms that collect user data for storage in a database with form validation", 
+            "400+ hours of coding experience, proactive problem solving, refactoring own and others code",
+            "Familiar with front-end libraries such as MUI, bootstrap & lodash"
+        ]
     },
     "australianStations": {
         "title": "Australian Petrol Stations Map",
         "position": "QA",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, nisi optio similique doloremque consequuntur sit pariatur voluptas? Alias accusantium, officiis non maiores architecto, illo eum magnam ab animi, illum libero?",
         "start": "",
         "finish": "",
-        "experienceNotes": ["something"]
+        "experienceNotes": [
+            "Collaborated remotely with a team of 5 to create a full-stack application integrating Google Maps API to display petrol stations across Australia.", 
+            "Provided code reviews and validation to ensure high-quality, maintainable code."
+        ]
     },
     "swinburne": {
         "title": "Swinburne - University of Technology",
         "position": "",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, nisi optio similique doloremque consequuntur sit pariatur voluptas? Alias accusantium, officiis non maiores architecto, illo eum magnam ab animi, illum libero?",
         "start": "",
         "finish": "",
-        "experienceNotes": []
+        "experienceNotes": [
+            "Developed multiple terminal applications in Java (Eclipse), including a Cinema Ticket Reservation system and a Travel Booking System + Policy tool.", 
+            "Basic experience provisioning and managing servers using Amazon Web Services (AWS).",
+            "Led two teams in collaborative software development projects:",
+            "ARMlite - Mastermind: Built a text-based Mastermind game in assembly language, including input validation to handle all possible user inputs.",
+            "Alarm Clock - Circuit: Designed a digital alarm clock using Logisim, featuring user-set alarms and LED time display."
+        ]
     }
 }

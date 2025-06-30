@@ -40,10 +40,10 @@ After the completion of the frontend I will include a backend and admin page so 
     - Status: Functional
     - Plan: Basic UI implementation
 
-- **Context Type issue**
-    - Affected Files: Files with toggle theme
+- **Unused Components & Inconsistent Conventions**
+    - Affected Files: Most
     - Status: Functional
-    - Plan: Discover Proper Theme Type
+    - Plan: QA Check Files
 
 ### Long Term Goals
 - Develop a backend for efficient updating of information.

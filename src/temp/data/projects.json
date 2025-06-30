@@ -1,7 +1,7 @@
 {
     "solitare": {
         "title": "Solitaire",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis optio eius doloribus, quidem repellat, illo facilis architecto",
+        "description": "Veritatis optio eius doloribus, quidem repellat, illo facilis architecto",
         "tag": ["html", "css", "js"],
         "github": "",
         "preview": "",
@@ -9,18 +9,26 @@
     },
     "diceRPG": {
         "title": "Dice RPG",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis optio eius doloribus, quidem repellat, illo facilis architecto",
-        "tag": ["ts", "rct"],
-        "github": "",
+        "description": "Veritatis optio eius doloribus, quidem repellat, illo facilis architecto",
+        "tag": ["ts", "rct", "zu", "im"],
+        "github": "https://github.com/AlliGrass/typescript-dice-rpg",
         "preview": "",
-        "status": "In Development"
+        "status": "Unavailable"
+    },
+    "javaGames": {
+        "title": "Javascript Games",
+        "description": "Veritatis optio eius doloribus, quidem repellat, illo facilis architecto",
+        "tag": ["js", "rct", "css"],
+        "github": "https://github.com/AlliGrass/javascript-games",
+        "preview": "",
+        "status": "Unavailable"
     },
     "portfolio": {
         "title": "Portfolio",
-        "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis optio eius doloribus, quidem repellat, illo facilis architecto",
-        "tag": ["ts", "rct", "next"],
-        "github": "",
+        "description": "Veritatis optio eius doloribus, quidem repellat, illo facilis architecto",
+        "tag": ["ts", "rct", "next", "tw"],
+        "github": "https://github.com/AlliGrass/portfolio",
         "preview": "",
-        "status": "In Development"
+        "status": "Complete"
     }
 }
