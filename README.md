@@ -45,6 +45,11 @@ After the completion of the frontend I will include a backend and admin page so 
     - Status: Functional
     - Plan: QA Check Files
 
+- **Unnecessary Rerender Components**
+    - Affected Files: `Skill.tsx`, `SkillCard.tsx`, etc
+    - Status: Functional
+    - Plan: Memoize relevant data
+
 ### Long Term Goals
 - Develop a backend for efficient updating of information.
 - Dynamic Resume: Updates as my experiences and skills expand for personal ease.

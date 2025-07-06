@@ -1,9 +1,11 @@
-import skills from "@/temp/data/skills.json"
+
 import SkillCard from "../../ui/base/SkillCard"
 import { useState } from "react"
-import Button from "@/components/ui/Button"
+import { useContentData } from "@/context/ContentDataContext"
+import parseData from "@/lib/db/parseData"
 
 export default function Skills({updateTags, selectedTags}: any) {
+    const {pageContent} = useContentData()
     const [openLanguagesFilter, setOpenLanguagesFilter] = useState(true)
     const [openTechnologiesFilter, setOpenTechnologiesFilter] = useState(true)
 
@@ -12,12 +14,13 @@ export default function Skills({updateTags, selectedTags}: any) {
             updateTags(tag)
         })
     }
+    // console.log("hello there " + parseData([pageContent, "languages"]).map((skillDetails)))
 
     return (
         <div className="p-5 m-2 hidden sm:hidden md:grid md:grid-cols-3 lg:block bg-secondary-light dark:bg-secondary-dark">
             <div>
                 <h2>Filters</h2>
-                {
+                {/* {
                     selectedTags.length === 0? <p className="p-2">No filters applied</p> : <>
                         <div className="flex flex-wrap m-1">
                             {selectedTags.map((tag) => {
@@ -30,16 +33,16 @@ export default function Skills({updateTags, selectedTags}: any) {
                     </>
                     
                     
-                }
+                } */}
             </div>
                 
             <div>
                 <h3 className="text-xl hover:cursor-pointer" onClick={() => setOpenLanguagesFilter(!openLanguagesFilter)}>Languages</h3>
                     <div className={`${openLanguagesFilter? "lg:block md:flex": "hidden"}`}>
                         {
-                            skills.languages.map((languageKey) => {
+                            parseData([pageContent, "languages"]).map((skillDetails) => { // use memo this
                                 return (
-                                    <SkillCard skillKey={languageKey} updateTags={updateTags} selectedTags={selectedTags}/>
+                                    <SkillCard skillDetails={skillDetails} updateTags={updateTags} selectedTags={selectedTags}/>
                                 )
                             })
                         }
@@ -51,9 +54,9 @@ export default function Skills({updateTags, selectedTags}: any) {
                 <h3 className="text-xl hover:cursor-pointer" onClick={() => setOpenTechnologiesFilter(!openTechnologiesFilter)}>Technologies</h3>
                 <div className={`${openTechnologiesFilter? "lg:block md:flex": "hidden"}`}>
                     {
-                        skills.technologies.map((technologyKey) => {
+                        parseData([pageContent, "technologies"]).map((skillDetails) => {
                             return (
-                                <SkillCard skillKey={technologyKey} updateTags={updateTags} selectedTags={selectedTags}/>
+                                <SkillCard skillDetails={skillDetails} updateTags={updateTags} selectedTags={selectedTags}/>
                             )
                         })
                     }

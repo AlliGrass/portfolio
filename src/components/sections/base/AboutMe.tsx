@@ -1,9 +1,8 @@
-import journey from "@/temp/data/journey.json"
-import CodingJourneyCard from "../../ui/base/CodingJourneyCard"
-import text from "@/temp/data/text.json"
+import { useContentData } from "@/context/ContentDataContext"
+import parseData from "@/lib/db/parseData"
 
 const AboutMe = ({featuredProject}: any) => {
-    const aboutMeText = text.about
+    const { pageContent } = useContentData()
 
     return(
         <div className="px-20 xl:grid xl:grid-cols-2"> 
@@ -11,11 +10,11 @@ const AboutMe = ({featuredProject}: any) => {
             
                 <h2 className="text-section-heading-2xl">About Me</h2>
                 {
-                    aboutMeText.map((text, index) => {
-                        return (
-                            <p className="p-5 text-lg">{text}</p>
-                        )
-                    })
+                    parseData([pageContent, "about"]).map((section) => { 
+                        return  (
+                            section.section_text.map((text) => <p className="p-5 text-lg">{text}</p>
+                        ))}
+                    )
                 }
             </section>
 

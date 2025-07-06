@@ -19,7 +19,7 @@ export default function ProjectCard({projectDetails, changeFeaturedProject}: any
                     </div>
                     <div className="flex flex-wrap">
                         {
-                            projectDetails.tag.map((skillKey) => {
+                            projectDetails.skill_list.map((skillKey) => {
                                 return (
                                     <ProjectSkillCard skillKey={skillKey}/>
                                 )
