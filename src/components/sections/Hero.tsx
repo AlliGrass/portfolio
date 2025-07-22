@@ -13,7 +13,7 @@ export default function Hero({toggleSidePage}: any) {
                 <p className="text-xl mt-8">{parseData([pageContent, "hero"]).map((section) => { return section.section_text.map((text) => text)})}</p>
             </div>
             <div>
-                <img className="text-center" src="https://placehold.co/400x400" alt="" />
+                <img className="text-center" src="assets/page-contents/profile.jpg" alt="portrait" />
             </div>
 
             {/* <Button buttonTitle={"Projects"} linkedRef={"link"} isFunction={false} />

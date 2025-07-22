@@ -2,9 +2,10 @@ import ProjectDemoButton from "./ProjectDemoButton"
 import ProjectSkillCard from "./ProjectSkillCard"
 
 
-export default function ProjectCard({projectDetails, changeFeaturedProject}: any) {
+export default function ProjectCard({projectDetails, changeFeaturedProject, skillList}: any) {
 
     
+    // console.log(skillDetails)
 
     return (
         <div className="w-100 sm:w-120 md:w-120 lg:w-100 xl:w-120 2xl:w-130 p-10 rounded-lg grid grid-cols-2 gap-4 m-2 bg-secondary-light dark:bg-secondary-dark">
@@ -19,9 +20,9 @@ export default function ProjectCard({projectDetails, changeFeaturedProject}: any
                     </div>
                     <div className="flex flex-wrap">
                         {
-                            projectDetails.skill_list.map((skillKey) => {
+                            skillList.map((skillDetails) => {
                                 return (
-                                    <ProjectSkillCard skillKey={skillKey}/>
+                                    <ProjectSkillCard skillDetails={skillDetails}/>
                                 )
                             })
                         }
