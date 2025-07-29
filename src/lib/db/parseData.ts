@@ -34,7 +34,7 @@ interface PageContentProps {
         start_date: string,
         finish_date: string,
         job: string,
-        notes: string[],
+        notes: string[]
     }[]
 }
 

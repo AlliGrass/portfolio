@@ -20,9 +20,9 @@ interface CapabilitiesProps {
 }
 
 
-const Capabilities = React.forwardRef<HTMLDivElement, CapabilitiesProps>(({changeFeaturedProject}: CapabilitiesProps, ref) => {
+const Capabilities = React.forwardRef<HTMLDivElement, CapabilitiesProps>(
+    function Capabilities({ changeFeaturedProject }, ref) {
     
-
     const [selectedTags, setSelectedTags] = useState([])
 
     const toggleSelectedTags = (updatingTag: string) => {

@@ -1,10 +1,13 @@
 interface FooterLinkProps {
-    socialDetails: any
+    socialDetails: {
+        social: string,
+        img_src: string,
+        href_link: string
+    }
 }
 
-export default function FooterLink({socialDetails}: FooterLinkProp) {
-
+export default function FooterLink({socialDetails}: FooterLinkProps) {
     return (
-        <a href={socialDetails.link} target="_blank">{socialDetails.social}</a>
+        <a href={socialDetails.href_link} target="_blank">{socialDetails.social}</a>
     )
 }

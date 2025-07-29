@@ -1,4 +1,4 @@
-
+import { RefObject } from 'react';
 import ThemeSwitcher from "../ui/tempThemeSwitch";
 import { useNavigationRefs } from "@/context/NavigationRefsContext";
 import { useContentData } from "@/context/ContentDataContext";
@@ -11,6 +11,7 @@ interface NavBarProps {
 }
 
 
+
 export default function NavBar({currentPage, toggleSidePage}: NavBarProps) {
     const { theme } = useTheme()
     const { pageContent } = useContentData()
@@ -21,7 +22,7 @@ export default function NavBar({currentPage, toggleSidePage}: NavBarProps) {
         projects: false,
     }
 
-    const navigateSection = (navInput: string, sectionRef: any) => {
+    const navigateSection = (navInput: string, sectionRef: RefObject<HTMLElement>) => {
         if (sectionsDetails[navInput] !== currentPage) toggleSidePage()
         sectionRef.current?.scrollIntoView({ behaviour: "smooth", block: "start"})
     }

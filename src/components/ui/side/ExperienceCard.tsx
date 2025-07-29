@@ -1,6 +1,13 @@
+interface ExperienceCardProps {
+    title: string,
+    concluded: boolean,
+    start_date: string,
+    finish_date: string,
+    job: string,
+    notes: string[]
+}
 
-
-export default function ExperienceCard({experienceDetails}: any) {
+export default function ExperienceCard({experienceDetails}: ExperienceCardProps) {
     
     return (
         <div className="w-100 md:w-150 xl:w-180 p-10 m-5 rounded-lg bg-secondary-light dark:bg-secondary-dark">

@@ -15,7 +15,7 @@ export default function Contact() {
 
     const handleEmailSubjectOptionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setEmailSubjectOptionInput(e.target.value)
-        e.target.value !== "other"? setEmailSubjectInput(e.target.value) : setEmailSubjectInput("")
+        setEmailSubjectInput(e.target.value !== "other"? e.target.value : "")
     }
 
     const handleContactNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {

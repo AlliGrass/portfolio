@@ -12,16 +12,23 @@ interface FeaturedProject {
     }
 }
 
+interface ProjectProps {
+    title: string,
+    description: string,
+    skill_list: string[],
+    img_src: string,
+    gif: string,
+    github: string,
+    status: string
+}
+
 interface ProjectCardProps {
-    projectDetails: any,
+    projectDetails: ProjectProps,
     changeFeaturedProject: (project: FeaturedProject) => void,
     skillList: string[]
 }
 
 export default function ProjectCard({projectDetails, changeFeaturedProject, skillList}: ProjectCardProps) {
-
-    
-    // console.log(skillDetails)
 
     return (
         <div className="w-100 sm:w-120 md:w-120 lg:w-100 xl:w-120 2xl:w-130 p-10 rounded-lg grid grid-cols-2 gap-4 m-2 bg-secondary-light dark:bg-secondary-dark">

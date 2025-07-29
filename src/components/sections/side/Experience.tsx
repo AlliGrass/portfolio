@@ -4,7 +4,8 @@ import React from "react"
 import { useContentData } from "@/context/ContentDataContext"
 import parseData from "@/lib/db/parseData"
 
-const Experience = React.forwardRef<HTMLDivElement>((_,ref) => {
+const Experience = React.forwardRef<HTMLDivElement>(
+    function Experience(_,ref) {
     const {pageContent} = useContentData()
 
     return (
