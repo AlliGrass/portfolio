@@ -1,7 +1,18 @@
 import { useContentData } from "@/context/ContentDataContext"
 import parseData from "@/lib/db/parseData"
 
-const AboutMe = ({featuredProject}: any) => {
+interface AboutMeProps {
+    featuredProject: {
+        title: string;
+        description: string;
+        tag: string[];
+        github: string;
+        preview: string;
+        status: string;
+    } 
+}
+
+const AboutMe = ({featuredProject}: AboutMeProps) => {
     const { pageContent } = useContentData()
 
     return(
@@ -12,7 +23,7 @@ const AboutMe = ({featuredProject}: any) => {
                 {
                     parseData([pageContent, "about"]).map((section) => { 
                         return  (
-                            section.section_text.map((text) => <p className="p-5 text-lg">{text}</p>
+                            section.section_text.map((text, index) => <p className="p-5 text-lg" key={index}>{text}</p>
                         ))}
                     )
                 }

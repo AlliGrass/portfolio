@@ -3,9 +3,23 @@ import ProjectCard from "../../ui/base/projects/ProjectCard"
 import { useContentData } from "@/context/ContentDataContext"
 import parseData from "@/lib/db/parseData"
 
+interface FeaturedProject {
+    featuredProject: {
+        title: string;
+        description: string;
+        tag: string[];
+        github: string;
+        preview: string;
+        status: string;
+    }
+}
 
+interface ProjectProps {
+    selectedTags: string[],
+    changeFeaturedProject: (project: FeaturedProject) => void
+}
 
-const Projects = ({selectedTags, changeFeaturedProject}: any) => {
+const Projects = ({selectedTags, changeFeaturedProject}: ProjectProps) => {
     const {pageContent} = useContentData()
 
     const skillList = parseData([pageContent, "skills"])
@@ -18,9 +32,9 @@ const Projects = ({selectedTags, changeFeaturedProject}: any) => {
                 {
                     (selectedTags.length === 0? 
                         parseData([pageContent, "projects"]) : parseData([pageContent, "projects"]).filter(project => project.skill_list.some(tag => selectedTags.includes(tag)))
-                    ).map((project) => {
+                    ).map((project, index) => {
                         return (
-                            <ProjectCard projectDetails={project} changeFeaturedProject={changeFeaturedProject} skillList={skillList.filter((skillDetails) => project.skill_list.includes(skillDetails.skill_key))} />
+                            <ProjectCard key={index} projectDetails={project} changeFeaturedProject={changeFeaturedProject} skillList={skillList.filter((skillDetails) => project.skill_list.includes(skillDetails.skill_key))} />
                         )
                     })
                 }

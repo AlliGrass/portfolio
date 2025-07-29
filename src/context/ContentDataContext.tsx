@@ -1,10 +1,19 @@
 "use client";
 
-import { createContext, useContext } from "react";
+import React, { createContext, useContext } from "react";
 
-const ContentDataContext = createContext<any>(null)
+interface ContentDataContextProps {
+    [key: string]: string
+}
 
-export function ContentDataProvider({ children, pageContent }: any) {
+const ContentDataContext = createContext<ContentDataContextProps | null>(null)
+
+interface ContentDataProviderProps {
+    children: React.ReactNode,
+    pageContent: any
+}
+
+export function ContentDataProvider({ children, pageContent}: ContentDataProviderProps) {
 
     return (
         <ContentDataContext.Provider value={{pageContent}}>

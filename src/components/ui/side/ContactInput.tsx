@@ -1,4 +1,11 @@
-export default function ContactInput({placeholderText, inputValue, handleInputValueChange}: any) {
+
+interface ContactInputProps {
+    placeholderText: string,
+    inputValue: string,
+    handleInputValueChange: () => void
+}
+
+export default function ContactInput({placeholderText, inputValue, handleInputValueChange}: ContactInputProps) {
 
     return (<>
         {

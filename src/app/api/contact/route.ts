@@ -45,12 +45,13 @@ export async function POST(request: Request) {
       { status: 200 }
     );
     
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Full error:", error);
+    const message = error instanceof Error ? error.message : 'Unknown error';
     return NextResponse.json(
       { 
         error: 'Internal server error',
-        details: error.message || 'Unknown error' 
+        details: message 
       },
       { status: 500 }
     );

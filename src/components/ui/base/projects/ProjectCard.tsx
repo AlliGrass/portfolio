@@ -1,8 +1,24 @@
-import ProjectDemoButton from "./ProjectDemoButton"
+
 import ProjectSkillCard from "./ProjectSkillCard"
 
+interface FeaturedProject {
+    featuredProject: {
+        title: string;
+        description: string;
+        tag: string[];
+        github: string;
+        preview: string;
+        status: string;
+    }
+}
 
-export default function ProjectCard({projectDetails, changeFeaturedProject, skillList}: any) {
+interface ProjectCardProps {
+    projectDetails: any,
+    changeFeaturedProject: (project: FeaturedProject) => void,
+    skillList: string[]
+}
+
+export default function ProjectCard({projectDetails, changeFeaturedProject, skillList}: ProjectCardProps) {
 
     
     // console.log(skillDetails)
@@ -16,13 +32,12 @@ export default function ProjectCard({projectDetails, changeFeaturedProject, skil
                     <div className="flex justify-between text-sm">
                         <a className="border rounded p-1 border-defined-light hover:cursor-pointer bg-button-light hover:bg-hover-light dark:border-defined-dark dark:bg-button-dark hover:dark:bg-hover-dark" href={projectDetails.GitHub}>GitHub</a>
                         <button onClick={() => changeFeaturedProject(projectDetails)} className="border rounded p-1 border-defined-light hover:cursor-pointer bg-button-light hover:bg-hover-light dark:border-defined-dark dark:bg-button-dark hover:dark:bg-hover-dark">{projectDetails.status}</button>
-                        {/* <ProjectDemoButton projectPreviewLink={projectDetails.preview} projectStatus={projectDetails.status}/> */}
                     </div>
                     <div className="flex flex-wrap">
                         {
-                            skillList.map((skillDetails) => {
+                            skillList.map((skillDetails, index) => {
                                 return (
-                                    <ProjectSkillCard skillDetails={skillDetails}/>
+                                    <ProjectSkillCard key={index} skillDetails={skillDetails}/>
                                 )
                             })
                         }

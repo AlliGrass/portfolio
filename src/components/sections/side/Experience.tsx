@@ -1,11 +1,10 @@
-import experiences from "@/temp/data/experience.json"
+
 import ExperienceCard from "../../ui/side/ExperienceCard"
-import React, { useEffect } from "react"
-import { getData } from "@/lib/db/getData"
+import React from "react"
 import { useContentData } from "@/context/ContentDataContext"
 import parseData from "@/lib/db/parseData"
 
-const Experience = React.forwardRef<any, any>(({toggleSidePage}: any, ref) => {
+const Experience = React.forwardRef<HTMLDivElement>((_,ref) => {
     const {pageContent} = useContentData()
 
     return (
@@ -13,9 +12,9 @@ const Experience = React.forwardRef<any, any>(({toggleSidePage}: any, ref) => {
             <h1 className="text-center text-section-heading-2xl">Experience</h1>
             <div className="p-10 justify-items-center">
                 {
-                    Object.values(parseData([pageContent, 'experience'])).map((experience) => {
+                    Object.values(parseData([pageContent, 'experience'])).map((experience, index) => {
                         return (
-                            <ExperienceCard experienceDetails={experience}/>
+                            <ExperienceCard key={index} experienceDetails={experience}/>
                         )
                     })
                 }

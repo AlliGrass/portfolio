@@ -12,9 +12,9 @@ export default function ExperienceCard({experienceDetails}: any) {
             
             <ul className="list-disc">
                 {
-                    experienceDetails.notes.map((note: any) => {
+                    experienceDetails.notes.map((note, index) => {
                         return (
-                            <li>{note}</li>
+                            <li key={index}>{note}</li>
                         )
                     })
                 }

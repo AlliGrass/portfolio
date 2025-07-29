@@ -1,6 +1,10 @@
 
+interface ProjectDemoButtonProps {
+    projectPreviewLink: string,
+    projectStatus: string
+}
 
-export default function ProjectDemoButton({projectPreviewLink, projectStatus}: any) {
+export default function ProjectDemoButton({projectPreviewLink, projectStatus}: ProjectDemoButtonProps) {
     
     const projectActivePreview = projectStatus === "Complete"
 

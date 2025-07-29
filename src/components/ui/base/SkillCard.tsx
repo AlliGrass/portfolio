@@ -1,4 +1,9 @@
-import skills from "@/temp/data/skills.json"
+
+interface SkillCardProps {
+    skillDetails: any,
+    updateTags: (updatingTag: string) => void,
+    selectedTags: string[]
+}
 
 export default function SkillCard({skillDetails, updateTags, selectedTags}: any) {
     return (

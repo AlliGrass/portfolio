@@ -1,12 +1,17 @@
-import Link from "next/link";
+
 import ThemeSwitcher from "../ui/tempThemeSwitch";
 import { useNavigationRefs } from "@/context/NavigationRefsContext";
 import { useContentData } from "@/context/ContentDataContext";
 import parseData from "@/lib/db/parseData";
 import { useTheme } from "next-themes";
 
+interface NavBarProps {
+    currentPage: boolean,
+    toggleSidePage: () => void
+}
 
-export default function NavBar({currentPage, changeCurrentPage}: any) {
+
+export default function NavBar({currentPage, toggleSidePage}: NavBarProps) {
     const { theme } = useTheme()
     const { pageContent } = useContentData()
     const {projectRef, experienceRef} = useNavigationRefs()
@@ -17,7 +22,7 @@ export default function NavBar({currentPage, changeCurrentPage}: any) {
     }
 
     const navigateSection = (navInput: string, sectionRef: any) => {
-        if (sectionsDetails[navInput] !== currentPage) changeCurrentPage()
+        if (sectionsDetails[navInput] !== currentPage) toggleSidePage()
         sectionRef.current?.scrollIntoView({ behaviour: "smooth", block: "start"})
     }
     

@@ -2,9 +2,17 @@
 
 import { createContext, useContext, useRef } from "react";
 
-const NavigationRefsContext = createContext<any>(null)
+interface NavigationRefsContextProps {
+    [key: string]: string
+}
 
-export function NavigationRefsProvider({ children }: any) {
+const NavigationRefsContext = createContext<NavigationRefsContextProps | null>(null)
+
+interface NavigationRefsProviderProps {
+    children: React.ReactNode
+}
+
+export function NavigationRefsProvider({ children }: NavigationRefsProviderProps) {
     const projectsRef = useRef(null)
     const experienceRef = useRef(null)
 

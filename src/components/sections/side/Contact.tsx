@@ -13,24 +13,24 @@ export default function Contact() {
     const [emailSubjectInput, setEmailSubjectInput] = useState("Career")
     const [emailMessageInput, setEmailMessageInput] = useState("")
 
-    const handleEmailSubjectOptionChange = (e: any) => {
+    const handleEmailSubjectOptionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setEmailSubjectOptionInput(e.target.value)
         e.target.value !== "other"? setEmailSubjectInput(e.target.value) : setEmailSubjectInput("")
     }
 
-    const handleContactNameChange = (e: any) => {
+    const handleContactNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setContactNameInput(e.target.value)
     }
 
-    const handleEmailAddressChange = (e: any) => {
+    const handleEmailAddressChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setEmailAddressInput(e.target.value)
     }
 
-    const handleEmailSubjectChange = (e: any) => {
+    const handleEmailSubjectChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setEmailSubjectInput(e.target.value)
     }
 
-    const handleEmailMessageChange = (e: any) => {
+    const handleEmailMessageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setEmailMessageInput(e.target.value)
     }
 

@@ -1,6 +1,11 @@
 
+interface CodingJourneyCardProps {
+    timePeriodDetails: {
+        [key: string]: string
+    }
+}
 
-export default function CodingJourneyCard({timePeriodDetails}: any) {
+export default function CodingJourneyCard({timePeriodDetails}: CodingJourneyCardProps) {
      
     return (
         <div className="p-5 group relative flex h-20 items-center justify-center">

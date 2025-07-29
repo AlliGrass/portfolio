@@ -3,7 +3,7 @@ import { useContentData } from "@/context/ContentDataContext"
 import parseData from "@/lib/db/parseData"
 
 
-export default function Hero({toggleSidePage}: any) {
+export default function Hero() {
     const { pageContent } = useContentData()
     return(
         <div className="p-40 px-70 flex justify-between bg-[linear-gradient(0deg,#f0f0ff_0%,#D3DCF2_24%,#B4C3E4_76%)] dark:bg-[linear-gradient(0deg,#1A1A1D_0%,#7d4a6b_24%,#450C32_76%)] justify-items-center">
