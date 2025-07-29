@@ -2,21 +2,22 @@
 import { NextResponse } from 'next/server';
 
 export async function POST(request: Request) {
+
+  const webhookUrl = process.env.DISCORD_WEBHOOK_URL
+
+  if (!webhookUrl) {
+    return new Response(JSON.stringify({ error: 'Server misconfigured' }), {
+      status: 500,
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+  }
+
   try {
-    // // Verify the webhook URL is set
-    // if (!process.env.DISCORD_WEBHOOK_URL) {
-    //   throw new Error('Discord webhook URL not configured');
-    // }
 
     const { emailSubject, emailAddress, contactName, emailMessage } = await request.json();
-    
-    // // Simple validation
-    // if (!message || typeof message !== 'string') {
-    //   return NextResponse.json(
-    //     { error: 'Valid message is required' },
-    //     { status: 400 }
-    //   );
-    // }
+
 
     const message = `
       ## ${emailSubject}
@@ -26,7 +27,7 @@ export async function POST(request: Request) {
     `
 
     // Use native fetch instead of discord-webhook-node package
-    const discordResponse = await fetch(process.env.NEXT_PUBLIC_DISCORD_WEBHOOK_URL, {
+    const discordResponse = await fetch(webhookUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
