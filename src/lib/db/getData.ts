@@ -2,7 +2,7 @@
 import { neon } from "@neondatabase/serverless";
 
 export async function getData() {
-    const portfolioDb = neon(process.env.DATABASE_URL);
+    const portfolioDb = neon(process.env.NEXT_PUBLIC_DATABASE_URL);
     
     const experiencesRaw = await portfolioDb`SELECT * FROM experience`
     const personalLinksRaw = await portfolioDb`SELECT * FROM personal_link`

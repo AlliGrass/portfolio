@@ -26,7 +26,7 @@ export async function POST(request: Request) {
     `
 
     // Use native fetch instead of discord-webhook-node package
-    const discordResponse = await fetch(process.env.DISCORD_WEBHOOK_URL, {
+    const discordResponse = await fetch(process.env.NEXT_PUBLIC_DISCORD_WEBHOOK_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
