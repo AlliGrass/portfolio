@@ -3,7 +3,8 @@
 import { createContext, useContext, useRef } from "react";
 
 interface NavigationRefsContextProps {
-    [key: string]: string
+    projectRef: React.RefObject<HTMLDivElement | null>,
+    experienceRef: React.RefObject<HTMLDivElement | null>
 }
 
 const NavigationRefsContext = createContext<NavigationRefsContextProps | null>(null)
@@ -13,8 +14,8 @@ interface NavigationRefsProviderProps {
 }
 
 export function NavigationRefsProvider({ children }: NavigationRefsProviderProps) {
-    const projectsRef = useRef(null)
-    const experienceRef = useRef(null)
+    const projectsRef = useRef<HTMLDivElement>(null)
+    const experienceRef = useRef<HTMLDivElement>(null)
 
     return(
         <NavigationRefsContext.Provider value={{projectRef: projectsRef, experienceRef: experienceRef}}>
@@ -25,5 +26,8 @@ export function NavigationRefsProvider({ children }: NavigationRefsProviderProps
 
 export function useNavigationRefs() {
     const context = useContext(NavigationRefsContext)
+    if (context === null) {
+        throw new Error('useNavigationRefs must be used within a NavigationRefsProvider');
+    }
     return context
 }

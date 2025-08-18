@@ -1,6 +1,7 @@
 import ContactInput from "@/components/ui/side/ContactInput";
 import { useState } from "react";
 
+type HandleFormTextChangeType = React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>
 
 export default function Contact() {
 
@@ -13,24 +14,24 @@ export default function Contact() {
     const [emailSubjectInput, setEmailSubjectInput] = useState("Career")
     const [emailMessageInput, setEmailMessageInput] = useState("")
 
-    const handleEmailSubjectOptionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleEmailSubjectOptionChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         setEmailSubjectOptionInput(e.target.value)
         setEmailSubjectInput(e.target.value !== "other"? e.target.value : "")
     }
 
-    const handleContactNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleContactNameChange = (e: HandleFormTextChangeType) => {
         setContactNameInput(e.target.value)
     }
 
-    const handleEmailAddressChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleEmailAddressChange = (e: HandleFormTextChangeType) => {
         setEmailAddressInput(e.target.value)
     }
 
-    const handleEmailSubjectChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleEmailSubjectChange = (e: HandleFormTextChangeType) => {
         setEmailSubjectInput(e.target.value)
     }
 
-    const handleEmailMessageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleEmailMessageChange = (e: HandleFormTextChangeType) => {
         setEmailMessageInput(e.target.value)
     }
 

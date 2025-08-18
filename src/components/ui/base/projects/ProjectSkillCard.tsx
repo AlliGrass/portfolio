@@ -1,6 +1,6 @@
 
 interface ProjectSkillCardProps {
-    skillDetails: {[key:string]: string}
+    skillDetails: SkillDetailProps
 }
 
 export default function ProjectSkillCard({skillDetails}: ProjectSkillCardProps) {

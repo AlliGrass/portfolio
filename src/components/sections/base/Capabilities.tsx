@@ -4,26 +4,13 @@ import { useState } from "react"
 import Projects from "./Projects"
 import Skills from "./Skills"
 
-interface FeaturedProject {
-    featuredProject: {
-        title: string;
-        description: string;
-        tag: string[];
-        github: string;
-        preview: string;
-        status: string;
-    }
-}
-
-interface CapabilitiesProps {
-    changeFeaturedProject: (project: FeaturedProject) => void
-}
 
 
-const Capabilities = React.forwardRef<HTMLDivElement, CapabilitiesProps>(
+
+const Capabilities = React.forwardRef<HTMLDivElement | null, {changeFeaturedProject: FeaturedProjectFunctionType}>(
     function Capabilities({ changeFeaturedProject }, ref) {
     
-    const [selectedTags, setSelectedTags] = useState([])
+    const [selectedTags, setSelectedTags] = useState<string[]>([])
 
     const toggleSelectedTags = (updatingTag: string) => {
         setSelectedTags( currentTags => currentTags.includes(updatingTag)? currentTags.filter(tag => tag !== updatingTag) : [...currentTags, updatingTag])

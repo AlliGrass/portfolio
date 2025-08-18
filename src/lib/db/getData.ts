@@ -2,17 +2,19 @@
 import { neon } from "@neondatabase/serverless";
 
 export async function getData() {
-    const portfolioDb = neon(process.env.NEXT_PUBLIC_DATABASE_URL);
+    const portfolioDb = neon(process.env.NEXT_PUBLIC_DATABASE_URL || '');
     
-    const experiencesRaw = await portfolioDb`SELECT * FROM experience`
-    const personalLinksRaw = await portfolioDb`SELECT * FROM personal_link`
-    const projectsRaw = await portfolioDb`SELECT * FROM project`
-    const skillsRaw = await portfolioDb`SELECT * FROM skill`
-    const aboutInfoRaw = await portfolioDb`SELECT * FROM page_info WHERE page_section = 'about'`
-    const heroRaw = await portfolioDb`SELECT * FROM page_info WHERE page_section = 'hero'`
+    const [experiencesRaw, personalLinksRaw, projectsRaw, skillsRaw, aboutInfoRaw, heroRaw] = 
+        await Promise.all([
+        portfolioDb`SELECT * FROM experience`,
+        portfolioDb`SELECT * FROM personal_link`,
+        portfolioDb`SELECT * FROM project`,
+        portfolioDb`SELECT * FROM skill`,
+        portfolioDb`SELECT * FROM page_info WHERE page_section = 'about'`,
+        portfolioDb`SELECT * FROM page_info WHERE page_section = 'hero'`
+    ]);
 
-    // return experiencesRaw
-    return {
+    const result = { // json response
         experience: experiencesRaw,
         personalLinks: personalLinksRaw,
         projects: projectsRaw,
@@ -20,5 +22,9 @@ export async function getData() {
         about: aboutInfoRaw,
         hero: heroRaw
     }
+
+    console.log(result)
+    // return experiencesRaw
+    return result
 }
 

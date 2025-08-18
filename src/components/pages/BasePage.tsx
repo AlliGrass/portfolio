@@ -4,15 +4,23 @@ import { useNavigationRefs } from "@/context/NavigationRefsContext";
 import { useState } from "react";
 
 export default function BasePage() {
+    
+
     const {projectRef} = useNavigationRefs()
-    const [featuredProject, setFeaturedProject] = useState({
+    const [featuredProject, setFeaturedProject] = useState<ProjectDetailProps>({
+        "id": 0,
         "title": "Portfolio",
         "description": "Veritatis optio eius doloribus, quidem repellat, illo facilis architecto",
-        "tag": ["ts", "rct", "next", "tw"],
+        "skill_list": ["ts", "rct", "next", "tw"],
+        "img_src": "",
+        "gif": "",
         "github": "https://github.com/AlliGrass/portfolio",
-        "preview": "",
-        "status": "Complete"
+        "status": "View"
     })
+
+    const handleFeaturedProjectChange: FeaturedProjectFunctionType = (project) => {
+        setFeaturedProject(project)
+    }
 
     return (
         <div className="2xl:px-25">
@@ -20,7 +28,7 @@ export default function BasePage() {
         
             <AboutMe featuredProject={featuredProject}/>
     
-            <Capabilities ref={projectRef} changeFeaturedProject={setFeaturedProject}/>
+            <Capabilities ref={projectRef} changeFeaturedProject={handleFeaturedProjectChange}/>
         </div>
     )
 }

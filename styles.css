@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "Hurricane";
+  src: url("fonts/Hurricane-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Corinthia";
+  src: url("fonts/Corinthia-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Apply fonts in Obsidian */
+body {
+  --font-text: "Corinthia", cursive;       /* General text */
+  --font-heading: "Hurricane", cursive;    /* Headers (H1, H2, etc.) */
+  --font-ui: "Corinthia", sans-serif;      /* UI elements (sidebar, menus) */
+}

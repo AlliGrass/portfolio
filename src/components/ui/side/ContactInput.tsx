@@ -2,7 +2,7 @@
 interface ContactInputProps {
     placeholderText: string,
     inputValue: string,
-    handleInputValueChange: () => void
+    handleInputValueChange: (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => void
 }
 
 export default function ContactInput({placeholderText, inputValue, handleInputValueChange}: ContactInputProps) {

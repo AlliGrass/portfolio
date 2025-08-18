@@ -1,31 +1,10 @@
 
 import ProjectSkillCard from "./ProjectSkillCard"
 
-interface FeaturedProject {
-    featuredProject: {
-        title: string;
-        description: string;
-        tag: string[];
-        github: string;
-        preview: string;
-        status: string;
-    }
-}
-
-interface ProjectProps {
-    title: string,
-    description: string,
-    skill_list: string[],
-    img_src: string,
-    gif: string,
-    github: string,
-    status: string
-}
-
 interface ProjectCardProps {
-    projectDetails: ProjectProps,
-    changeFeaturedProject: (project: FeaturedProject) => void,
-    skillList: string[]
+    projectDetails: ProjectDetailProps,
+    changeFeaturedProject: FeaturedProjectFunctionType,
+    skillList: SkillDetailProps[]
 }
 
 export default function ProjectCard({projectDetails, changeFeaturedProject, skillList}: ProjectCardProps) {
@@ -37,12 +16,12 @@ export default function ProjectCard({projectDetails, changeFeaturedProject, skil
                 <p>{projectDetails.description}</p>
                 <div>
                     <div className="flex justify-between text-sm">
-                        <a className="border rounded p-1 border-defined-light hover:cursor-pointer bg-button-light hover:bg-hover-light dark:border-defined-dark dark:bg-button-dark hover:dark:bg-hover-dark" href={projectDetails.GitHub}>GitHub</a>
-                        <button onClick={() => changeFeaturedProject(projectDetails)} className="border rounded p-1 border-defined-light hover:cursor-pointer bg-button-light hover:bg-hover-light dark:border-defined-dark dark:bg-button-dark hover:dark:bg-hover-dark">{projectDetails.status}</button>
+                        <a className="border rounded p-1 border-defined-light hover:cursor-pointer bg-button-light hover:bg-hover-light dark:border-defined-dark dark:bg-button-dark hover:dark:bg-hover-dark" href={projectDetails.github}>GitHub</a>
+                        <button onClick={() => changeFeaturedProject(projectDetails)} className="border rounded p-1 border-defined-light hover:cursor-pointer bg-button-light hover:bg-hover-light dark:border-defined-dark dark:bg-button-dark hover:dark:bg-hover-dark">{projectDetails.status == "Complete"? "View": projectDetails.status}</button>
                     </div>
                     <div className="flex flex-wrap">
                         {
-                            skillList.map((skillDetails, index) => {
+                            skillList.map((skillDetails: SkillDetailProps, index: number) => {
                                 return (
                                     <ProjectSkillCard key={index} skillDetails={skillDetails}/>
                                 )

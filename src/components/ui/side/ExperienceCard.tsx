@@ -1,10 +1,6 @@
+
 interface ExperienceCardProps {
-    title: string,
-    concluded: boolean,
-    start_date: string,
-    finish_date: string,
-    job: string,
-    notes: string[]
+    experienceDetails: ExperienceDetailProps
 }
 
 export default function ExperienceCard({experienceDetails}: ExperienceCardProps) {
@@ -19,7 +15,7 @@ export default function ExperienceCard({experienceDetails}: ExperienceCardProps)
             
             <ul className="list-disc">
                 {
-                    experienceDetails.notes.map((note, index) => {
+                    experienceDetails.notes.map((note: string, index: number) => {
                         return (
                             <li key={index}>{note}</li>
                         )

@@ -6,14 +6,14 @@ import parseData from "@/lib/db/parseData"
 
 const Experience = React.forwardRef<HTMLDivElement>(
     function Experience(_,ref) {
-    const {pageContent} = useContentData()
+    const pageContent = useContentData()
 
     return (
         <div ref={ref} className="p-10">
             <h1 className="text-center text-section-heading-2xl">Experience</h1>
             <div className="p-10 justify-items-center">
                 {
-                    Object.values(parseData([pageContent, 'experience'])).map((experience, index) => {
+                    Object.values(parseData([pageContent, 'experience']) as unknown as ExperienceDetailProps[]).map((experience: ExperienceDetailProps, index: number) => {
                         return (
                             <ExperienceCard key={index} experienceDetails={experience}/>
                         )
