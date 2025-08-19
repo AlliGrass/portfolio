@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 
-const ThemeSwitcher = () => {
+const ThemeToggle = () => {
     const [mounted, setMounted] = useState(false);
     const { theme, setTheme } = useTheme();
 
@@ -17,7 +17,7 @@ const ThemeSwitcher = () => {
 
     return (
         <button
-            className="p-2 rounded-md bg-gray-200 dark:bg-blue-500"
+            className="bg-gray-200 dark:bg-blue-500"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
         >
             {theme === "dark" ? "Light" : "Dark"} Mode
@@ -25,4 +25,4 @@ const ThemeSwitcher = () => {
     );
 };
 
-export default ThemeSwitcher;
+export default ThemeToggle;

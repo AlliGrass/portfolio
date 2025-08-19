@@ -1,5 +1,5 @@
 import { RefObject } from 'react';
-import ThemeSwitcher from "../ui/tempThemeSwitch";
+import ThemeToggle from "../ui/ThemeToggle";
 import { useNavigationRefs } from "@/context/NavigationRefsContext";
 import { useContentData } from "@/context/ContentDataContext";
 import parseData from "@/lib/db/parseData";
@@ -43,11 +43,10 @@ export default function NavBar({currentPage, toggleSidePage}: NavBarProps) {
                 <img className="max-w-full max-h-full w-auto h-auto object-contain" src={theme === "light"? "assets/page-contents/initialLogoLight.png" : "assets/page-contents/initialLogoDark.png" } alt={logoDetails?.social}/>
             </a>
             {/* <div>Logo</div> */}
-            <div className='flex justify-between'>
+            <div className='flex gap-x-4'>
                 <button onClick={() => navigateSection("projects", projectRef)}>Project</button>
                 <button onClick={() => navigateSection("experience", experienceRef)}>Experience</button>
-                {/* <a href="">Resume</a> */}
-                <ThemeSwitcher/>
+                <ThemeToggle/>
             </div>
 
 

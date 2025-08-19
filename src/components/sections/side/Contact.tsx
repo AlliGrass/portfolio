@@ -70,7 +70,7 @@ export default function Contact() {
 
     return (
         <div className="w-120 p-10 flex flex-col justify-self-center bg-secondary-light dark:bg-secondary-dark">
-            <h1>Get In Touch</h1>
+            <h1 className="text-xl">Get In Touch</h1>
             <h2 className="flex justify-between">Name {!isValidContactForm && contactNameInput === "" && <span className="text-[#D70040]">Required</span> }</h2>
             <ContactInput placeholderText={"Your Name"} inputValue={contactNameInput} handleInputValueChange={handleContactNameChange} />
             <h2 className="flex justify-between">Email {!isValidContactForm && emailAddressInput === "" && <span className="text-[#D70040]">Required</span> }</h2>
